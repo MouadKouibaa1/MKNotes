@@ -9,10 +9,10 @@ function NoteDetails() {
     const [note, setNote] = useState();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/Notes?id=${id}`).then(res => setNote(res.data)).catch(err => console.log(err));
+        axios.get(`https://notes-db-json.onrender.com/Notes?id=${id}`).then(res => setNote(res.data)).catch(err => console.log(err));
     }, [id])
     const deleteNote = () => {
-        window.confirm("Voulez-vous vraiment supprimer cette note ?") && axios.delete(`http://localhost:8000/Notes/${id}`).then(() => navigate("/")).catch(err => console.log(err));
+        window.confirm("Voulez-vous vraiment supprimer cette note ?") && axios.delete(`https://notes-db-json.onrender.com/Notes/${id}`).then(() => navigate("/")).catch(err => console.log(err));
     }
     return (
         <>

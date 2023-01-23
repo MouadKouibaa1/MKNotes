@@ -10,7 +10,7 @@ function AddNote() {
 
     const AddNote = () => {
         const dateNow = new Date();
-        titleRef.current.value === "" || textRef.current.value === "" || color === "" ? alert("Veuillez Remplire les informations du note.") : axios.post("http://localhost:8000/Notes", {
+        titleRef.current.value === "" || textRef.current.value === "" || color === "" ? alert("Veuillez Remplire les informations du note.") : axios.post("https://notes-db-json.onrender.com/Notes", {
             Title: titleRef.current.value, Text: textRef.current.value, Date: dateNow.toLocaleString('en-US', { hour12: false }).split(",").join(" "), Color: color
         }).then(res => res.status === 201 && alert("Note Ajoute avec succes")).catch(err => console.log(err));
     }

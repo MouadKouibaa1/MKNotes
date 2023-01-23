@@ -12,13 +12,13 @@ function MKNotes() {
     const keywordRef = useRef();
 
     useEffect(() => {
-        axios.get("http://localhost:8000/Notes")
+        axios.get("https://notes-db-json.onrender.com/Notes")
             .then(res => setNotes(res.data))
             .catch(e => console.log(e));
     }, [])
 
     const searchHandler = () => {
-        axios.get("http://localhost:8000/Notes?q=" + keywordRef.current.value)
+        axios.get("https://notes-db-json.onrender.com/Notes?q=" + keywordRef.current.value)
             .then(res => setNotes(res.data))
             .catch(e => console.log(e));
     }
