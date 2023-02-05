@@ -8,8 +8,11 @@ function Loading() {
         setColor(colors[Math.floor(Math.random() * colors.length)]);
     }
     useEffect(() => {
-        setInterval(changeColor, 1000)
-    }, [color])
+        const interval = setInterval(changeColor, 1000)
+        return (
+            clearInterval(interval)
+        )
+    })
     return (
         <div>
             <lord-icon
